@@ -1,4 +1,3 @@
-import java.awt.print.Printable;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.Pipe;
@@ -52,11 +51,13 @@ public class MainPipe {
 					e.printStackTrace();
 				}
 			};
+			
+			new Thread(writer).start();
+			new Thread(reader).start();
 
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }
